@@ -24,8 +24,8 @@ include_directories(${MAUDIO_LIB_TEST_DIR})
 
 enable_testing()
 
-add_subdirectory(libmaudio)
-add_subdirectory(maudio-plugins)
+add_subdirectory("libmaudio")
+add_subdirectory("maudio-plugins")
 
 #create packages
 if(MAUDIO_PORTABLE EQUAL 1)
@@ -35,8 +35,6 @@ endif()
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Martin Schwarz")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "MAudio")
 set(CPACK_PACKAGE_VENDOR "Martin Schwarz")
-set(CPACK_PACKAGE_DESCRIPTION_FILE "${PROJECT_SOURCE_DIR}/README.txt")
-set(CPACK_RESOURCE_FILE_LICENSE "${PROJECT_SOURCE_DIR}/LICENSE.txt")
 set(CPACK_PACKAGE_VERSION_MAJOR "0")
 set(CPACK_PACKAGE_VERSION_MINOR "0")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
