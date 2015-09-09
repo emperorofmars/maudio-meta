@@ -1,0 +1,8 @@
+.directory
+build
+deploy
+*.so
+libmaudio
+maudio-plugins
+maudio-editor-qt
+maudio-editor-ncurses
