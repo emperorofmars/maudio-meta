@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.0)
 project(maudio)
 
-set(MAUDIO_PORTABLE 0 CACHE BOOL "set portable install")
+set(PORTABLE 1 CACHE BOOL "set portable install")
 
-if(MAUDIO_PORTABLE EQUAL 1)
+set(MAUDIO_PARENT_PROJECT 1)
+
+if(PORTABLE EQUAL 1)
 	message(STATUS "Using portable install")
 	
 	set(CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/deploy")
@@ -26,9 +28,11 @@ enable_testing()
 
 add_subdirectory("libmaudio")
 add_subdirectory("maudio-plugins")
+add_subdirectory("maudio-editor-qt")
+add_subdirectory("examples")
 
 #create packages
-if(MAUDIO_PORTABLE EQUAL 1)
+if(PORTABLE EQUAL 1)
 	set(CPACK_GENERATOR "ZIP")
 endif()
 

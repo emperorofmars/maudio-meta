@@ -6,3 +6,5 @@ libmaudio
 maudio-plugins
 maudio-editor-qt
 maudio-editor-ncurses
+maudio-meta.kdev4
+.kdev4
