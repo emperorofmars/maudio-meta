@@ -6,6 +6,7 @@ if(NOT DEFINED MAUDIO_PARENT_PROJECT)
 endif()
 
 set(PORTABLE 1 CACHE BOOL "set portable install")
+set(DEBIAN 0 CACHE BOOL "create Debian package")
 
 if(PORTABLE EQUAL 1)
 	message(STATUS "example: using portable install")

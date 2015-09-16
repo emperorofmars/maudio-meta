@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(maudio)
 
 set(PORTABLE 1 CACHE BOOL "set portable install")
+set(DEBIAN 0 CACHE BOOL "create Debian package")
 
 set(MAUDIO_PARENT_PROJECT 1)
 
@@ -33,7 +34,11 @@ add_subdirectory("examples")
 
 #create packages
 if(PORTABLE EQUAL 1)
+	message(STATUS "Using zip package generator")
 	set(CPACK_GENERATOR "ZIP")
+elseif(${DEBIAN} EQUAL 1)
+	message(STATUS "Using Debian package generator")
+	set(CPACK_GENERATOR "DEB")
 endif()
 
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Martin Schwarz")
